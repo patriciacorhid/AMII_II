@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry} % page settings
+\usepackage{amsmath} % provides many mathematical environments & tools
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[spanish]{babel}
+
+\usepackage{multirow}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+
+\usepackage[utf8]{inputenc}
+\setlength{\parindent}{0mm}
+
+\usepackage[parfill]{parskip}
+
+% Para el código
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\newcommand{\n}[1]{{\color{gray}#1}}
+\lstset{numbers=left,numberstyle=\small\color{gray}}
+
+% Entorno para estilo de ejercicios
+\newenvironment{ejercicio}[1]{\textbf{#1} \vspace*{5mm}}{\vspace*{5mm}}
+\setlength{\parindent}{10pt} 
+
+\begin{document}
+
+\title{Problema Análisis Matemático II}
+\author{Patricia Córdoba Hidalgo}
+\date{\today}
+
+\maketitle
+
+Estudiad la convergencia puntual y uniforme de la sucesión de funciones $f_n$ definidas en $[0,1]$ mediante $$f_n(x) = x-x^n$$ para todo $x\in [0,1]$.
+
+\textbf{Convergencia puntual:}
+
+Sea $f_n(x) = x - x^n \text{ }\forall x \in [0,1] $, la función f a la que converge puntualmente ${f_n}$ es:
+
+$f=\begin{cases}
+ & \text{x si } x \in [0,1) \\
+ & \text{0 si } x = 1 \\
+\end{cases}$
+
+Demostración:
+
+$x=0 \Rightarrow 0 - 0^n = 0 \text{ }\forall n \in \mathbb{N} \\$
+
+$x=1 \Rightarrow 1 - 1^n = 0 \text{ }\forall n \in \mathbb{N} \\$
+
+$x \in (0,1) \Rightarrow  \lim\limits_{n\to\infty}x - x^n = \lim\limits_{n\to\infty}x - \lim\limits_{n\to\infty}x^n \\$
+
+Como $x \in (0,1)$, $\lim\limits_{n\to\infty}x = x$ \text{   }y $\lim\limits_{n\to\infty}x^n=0$, luego $\lim\limits_{n\to\infty}x - x^n = x  \text{ }\forall x \in (0,1)$
+
+\textbf{Convergencia uniforme:}
+
+Como converge puntualmente, y que converja uniformente implica que converja puntualmente, el único candidato a límite de ${f_n}$ es f. Sin embargo, por un teorema, sabemos que ${f_n}$ converge uniformemente y $f_n$ es continua $\Rightarrow f$ es continua. Como f no es continua y $f_n$ es continua, entonces ${f_n}$ no puede converger uniformemente.
+
+\end{document}
